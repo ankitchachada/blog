@@ -4,6 +4,7 @@ lock "3.8.1"
 set :application, "blog"
 set :repo_url, "git@github.com:ankitchachada/blog.git"
 set :branch, :master
+set :stage,           :production
 set :deploy_to, '/home/deploy/blog'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
