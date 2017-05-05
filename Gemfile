@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
+gem 'figaro'
 gem 'puma', '~> 3.7'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 gem 'active_model_serializers'
@@ -52,7 +53,7 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano3-puma'
 end
 
 group :development do
