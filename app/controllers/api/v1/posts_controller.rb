@@ -10,23 +10,23 @@ class Api::V1::PostsController < Api::V1::BaseController
 	
   def create
 	  post = current_user.posts.create(post_params)
-	  respond_with post
+	  render json: post
   end
 
   def show
-	  respond_with @post
+	  render json: @post
   end
 
   def update
 	  authorize @post
 	  @post.update(post_params)
-	  respond_with @post
+	  render json: @post
   end
 
   def destroy
 	  authorize @post
 	  @post.destroy
-	  respond_with @post
+	  render json: @post
   end
 
 private
