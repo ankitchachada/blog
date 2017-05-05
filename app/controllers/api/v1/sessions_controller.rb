@@ -7,7 +7,7 @@ class Api::V1::SessionsController < Devise::SessionsController
     return invalid_login_attempt unless resource
     if resource.valid_password?(params[:user][:password])
       sign_in("user", resource)
-      render json: {success: true, email: resource.email ,authentication_token: resource.authentication_token}
+      render :json=> {:success=>true, :authentication_token => resource.authentication_token}
       return
     end
     invalid_login_attempt
@@ -17,7 +17,7 @@ class Api::V1::SessionsController < Devise::SessionsController
 
     def invalid_login_attempt
       warden.custom_failure!
-      render json: {success: false, message: "Error with your login or password"}, status :401
+      render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
     end
 
 end
