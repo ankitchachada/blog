@@ -12,15 +12,15 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def update
-	authorize @user
-	@user.update(user_params)
-	respond_with @user
+  	authorize @user
+  	@user.update(user_params)
+  	respond_with @user
   end
 
   def destroy
-	authorize @user
-	@user.destroy
-	respond_with @user
+  	authorize @user
+  	@user.destroy
+  	respond_with @user
   end
 
   private

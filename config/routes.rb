@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
   	namespace :v1 do
   		resources :posts
-  		resources :users
   		devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }
+  		resources :users, only: [:index,:show,:destroy,:update]
   	end
   end
 end
