@@ -14,13 +14,13 @@ class Api::V1::UsersController < Api::V1::BaseController
   def update
   	authorize @user
   	@user.update(user_params)
-  	render json: @user
+  	render json: {success: "Updated User", user: @user}
   end
 
   def destroy
   	authorize @user
   	@user.destroy
-  	render json: @user
+  	render json: {success: "Deleted User", user: @user.username}
   end
 
   private

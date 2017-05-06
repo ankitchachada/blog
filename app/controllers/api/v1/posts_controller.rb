@@ -20,13 +20,13 @@ class Api::V1::PostsController < Api::V1::BaseController
   def update
 	  authorize @post
 	  @post.update(post_params)
-	  render json: @post
+	  render json: {success: "Post Updated", post: @post}
   end
 
   def destroy
 	  authorize @post
 	  @post.destroy
-	  render json: @post
+	  render json: {success: "Post Deleted", post: @post.id}
   end
 
 private
