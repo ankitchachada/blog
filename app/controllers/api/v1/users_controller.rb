@@ -4,23 +4,23 @@ class Api::V1::UsersController < Api::V1::BaseController
   
   def index
     @users = User.all.page(params[:page]).per(params[:limit])
-	respond_with @users
+	  render json: @users
   end
 
   def show
-  	respond_with @user
+  	render json: @user
   end
 
   def update
   	authorize @user
   	@user.update(user_params)
-  	respond_with @user
+  	render json: @user
   end
 
   def destroy
   	authorize @user
   	@user.destroy
-  	respond_with @user
+  	render json: @user
   end
 
   private
